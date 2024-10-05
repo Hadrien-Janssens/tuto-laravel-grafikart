@@ -23,4 +23,10 @@ class BlogController extends Controller
             'link' => route('blog.show', ['slug' => 'mon-article', 'id' => 12])
         ];
     }
+
+    public function show(string $slug, string $id)
+    {
+        $post = Post::find($id);
+        return view('blog.show', ['post' => $post]);
+    }
 }

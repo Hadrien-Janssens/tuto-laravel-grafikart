@@ -20,13 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [BlogController::class, 'index'])->name('index');
 Route::get('/blog', [BlogController::class, 'blog'])->name('blog.index');
 
-Route::get('/blog/{slug}-{id}', function (string $slug, string $id, Request $request) {
-    return [
-        's' => $slug,
-        'i' => $id,
-        'r' => $request->input('name')
-    ];
-})->where([
+Route::get('/blog/{slug}-{id}', [BlogController::class, 'show'])->where([
     'slug' => '[a-z0-9\-]+',
     'id' => '[\d]+',
 ])->name('blog.show');
