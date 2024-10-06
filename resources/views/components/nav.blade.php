@@ -4,5 +4,6 @@
     <ul class="flex gap-3 ">
         <li><a href="{{route('index')}}">accueil</a></li>
         <li><a href="{{ route('blog.index')}}">blog</a></li>
+        <li><a href="{{ route('new')}}">nouveau</a></li>
     </ul>
 </nav>

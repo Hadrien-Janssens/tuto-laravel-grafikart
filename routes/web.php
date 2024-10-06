@@ -25,3 +25,5 @@ Route::get('/blog/{slug}-{id}', [BlogController::class, 'show'])->where([
     'slug' => '[a-z0-9\-]+',
     'id' => '[\d]+',
 ])->name('blog.show');
+
+Route::get('/new', [BlogController::class, 'new'])->name('new');

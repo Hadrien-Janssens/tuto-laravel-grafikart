@@ -27,4 +27,9 @@ class BlogController extends Controller
         $post = Post::find($id);
         return view('blog.show', ['post' => $post]);
     }
+
+    public function new(): View
+    {
+        return view('new');
+    }
 }
