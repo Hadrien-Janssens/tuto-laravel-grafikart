@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [BlogController::class, 'index'])->name('index');
+
 Route::get('/blog', [BlogController::class, 'blog'])->name('blog.index');
 
 Route::get('/blog/{slug}-{id}', [BlogController::class, 'show'])->where([

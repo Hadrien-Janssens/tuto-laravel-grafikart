@@ -13,18 +13,16 @@ class BlogController extends Controller
     public function index(): View
     {
         $posts = Post::paginate(1);
-
         return view('index', ['posts' => $posts]);
     }
 
-    public function blog(): array
+    public function blog(): view
     {
-        return [
-            'link' => route('blog.show', ['slug' => 'mon-article', 'id' => 12])
-        ];
+        $posts = Post::all();
+        return view('blog/index', ['posts' => $posts]);
     }
 
-    public function show(string $slug, string $id)
+    public function show(string $slug, string $id): View
     {
         $post = Post::find($id);
         return view('blog.show', ['post' => $post]);
